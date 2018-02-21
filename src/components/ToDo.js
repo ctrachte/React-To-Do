@@ -5,7 +5,7 @@ class ToDo extends Component {
 // Define a render() method on your class. This method is required.
   render () {
     return ( //The return method returns JSX, a syntax for defining HTML templates in JavaScript.
-      <li> a todo will go here! </li> //In JSX, all tags need to either have a corresponding closing tag or be self-closing.
+      <li>{ this.props.description }</li> // In the ToDo component, we can now access props on the this.props object.
     );
   }
 }
