@@ -20,10 +20,8 @@ class App extends Component {
     return (
       <div className="App">
         <ul>
-          <ToDo />
-          <ToDo />
           { this.state.todos.map( (todo, index) =>
-            <ToDo key={ index } />
+            <ToDo key={ index } /> //  each child of an array or iterator needs to have a key with a unique value. The key gives React a reliable way of distinguishing between array items.
             // The .map() method iterates through the items in an array and returns a new array,
             // and we can use it to convert raw data into an array of JSX elements that React will render into HTML.
           )}
