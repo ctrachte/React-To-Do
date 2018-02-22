@@ -13,7 +13,8 @@ class App extends Component {
         { description: 'Walk the cat', isCompleted: true }, //Each object will be a to-do with properties named  description and isCompleted.
         { description: 'Throw the dishes away', isCompleted: false },
         { description: 'Buy new dishes', isCompleted: false }
-      ]
+      ],
+      newTodoDescription: ''
     };
   }
   handleSubmit(e) {
@@ -39,7 +40,7 @@ class App extends Component {
           )}
         </ul>
         <form onSubmit={ (e) => this.handleSubmit(e) }>
-          <input type="text" />
+          <input type="text" value={ this.state.newTodoDescription } />
           <input type="submit" />
         </form>
       </div>
