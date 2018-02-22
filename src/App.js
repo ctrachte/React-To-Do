@@ -34,7 +34,7 @@ class App extends Component {
             // and we can use it to convert raw data into an array of JSX elements that React will render into HTML.
           )}
         </ul>
-        <form>
+        <form onSubmit={ (e) => this.handleSubmit(e) }>
           <input type="text" />
           <input type="submit" />
         </form>
