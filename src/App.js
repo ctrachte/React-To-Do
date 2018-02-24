@@ -34,6 +34,12 @@ class App extends Component {
     todo.isCompleted = todo.isCompleted ? false : true;
     this.setState({ todos: todos });
   }
+  deleteTodo (index) {
+    const todos = this.state.todos;
+    const todo = todos[index];
+    let newList = todos.filter(item => item !== todo);
+    this.setState({ todos: newList});
+  }
 
   render() {
     return (
@@ -41,7 +47,7 @@ class App extends Component {
         <ul>
           { this.state.todos.map( (todo, index) =>
             //  each child of an array or iterator needs to have a key with a unique value. The key gives React a reliable way of distinguishing between array items.
-            <ToDo key={ index } description={ todo.description } isCompleted={ todo.isCompleted } toggleComplete={ () => this.toggleComplete(index) } />
+            <ToDo key={ index } description={ todo.description } isCompleted={ todo.isCompleted } toggleComplete={ () => this.toggleComplete(index) } deleteTodo={ () => this.deleteTodo(index) } />
             // The .map() method iterates through the items in an array and returns a new array,
             // and we can use it to convert raw data into an array of JSX elements that React will render into HTML.
           )}
