@@ -7,7 +7,7 @@ class ToDo extends Component {
     return ( //The return method returns JSX, a syntax for defining HTML templates in JavaScript.
       <li>
         <input type="checkbox" checked={ this.props.isCompleted } onChange={ this.props.toggleComplete } />
-        <span>{ this.props.description }</span>
+        <span className="itemDescription">{ this.props.description }</span>
         <button onClick={ this.props.deleteTodo } >Delete</button>
       </li>
       // renders the isCompleted prop as the value of the checked property of an <input /> with a type attribute of  checkbox.

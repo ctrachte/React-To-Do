@@ -10,7 +10,7 @@ class App extends Component {
     // A component's state is expected to be an object, so assign an object with a todos property to this.state. Make todos an array, and add several objects to the array.
     this.state = {
       todos: [
-        { description: 'Walk the cat', isCompleted: true }, //Each object will be a to-do with properties named  description and isCompleted.
+        { description: 'Walk the cat', isCompleted: false }, //Each object will be a to-do with properties named  description and isCompleted.
         { description: 'Throw the dishes away', isCompleted: false },
         { description: 'Buy new dishes', isCompleted: false }
       ],
@@ -52,8 +52,9 @@ class App extends Component {
             // and we can use it to convert raw data into an array of JSX elements that React will render into HTML.
           )}
         </ul>
-        <form onSubmit={ (e) => this.handleSubmit(e) }>
+        <form className="addNew" onSubmit={ (e) => this.handleSubmit(e) }>
           <input type="text" value={ this.state.newTodoDescription } onChange={ (e) => this.handleChange(e) } />
+            <p>Add a New To-Do!</p>
           <input type="submit" />
         </form>
       </div>
